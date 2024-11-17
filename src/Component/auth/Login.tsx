@@ -2,11 +2,9 @@ import React, { useState, useContext } from "react";
 import { ILogin } from "../model/user.model";
 import { Form } from "react-router-dom";
 import axios from "axios";
-import UserContext from "../../context/note.context";
 
 const Login: React.FC<any> = () => {
   const [login, setLogin] = useState(false);
-  const { setUser } = useContext(UserContext);
 
   const [form, setForm] = useState<ILogin>({ email: "", password: "" });
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

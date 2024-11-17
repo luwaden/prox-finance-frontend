@@ -1,0 +1,2 @@
+login api = http://localhost:5000/api/v1/auth//login
+signup api = http://localhost:5000/api/v1/auth//signup

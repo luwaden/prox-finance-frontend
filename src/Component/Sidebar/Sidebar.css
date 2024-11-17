@@ -1,0 +1,95 @@
+/* Sidebar Base Styles */
+.sidebar {
+  width: 250px;
+  background-color: #1e2238; /* Dark blue */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand Section */
+.brand {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Menu Styles */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #2a2f4a;
+}
+
+.menu-item.active {
+  background-color: #4caf50; /* Active item color */
+  color: white;
+}
+
+.menu-icon {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.menu-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Settings Section */
+.settings {
+  border-top: 1px solid #394057;
+  padding-top: 20px;
+}
+
+.settings ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.settings-item:hover {
+  background-color: #2a2f4a;
+}
+
+.settings-icon {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.settings-text {
+  font-size: 16px;
+  font-weight: 500;
+}
