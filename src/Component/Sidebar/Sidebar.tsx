@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
         <ul>
           <li className='menu-item'>
             <span className='menu-icon'>👤</span>
-            <span className='menu-text'>Customers</span>
+            <span className='menu-text'>Ayodeji</span>
           </li>
           <li className='menu-item'>
             <span className='menu-icon'>📥</span>
@@ -25,8 +25,8 @@ const Sidebar: React.FC = () => {
             <span className='menu-text'>Dashboard</span>
           </li>
           <li className='menu-item'>
-            <span className='menu-icon'>📚</span>
-            <span className='menu-text'>Knowledge</span>
+            <span className='menu-icon'>💼</span>
+            <span className='menu-text'>Summary</span>
           </li>
           <li className='menu-item'>
             <span className='menu-icon'>💰</span>

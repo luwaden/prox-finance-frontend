@@ -6,6 +6,7 @@
   background-color: #ffffff; /* White background */
   border-bottom: 1px solid #e0e0e0; /* Light gray border */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
 }
 
 .dashboard-heading h1 {

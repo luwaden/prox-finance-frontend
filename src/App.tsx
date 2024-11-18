@@ -1,20 +1,41 @@
 import React from "react";
 
 import Sidebar from "./Component/Sidebar/Sidebar";
-import {Route, Routes } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Routes,
+} from "react-router-dom";
 import AuthPage from "./Component/auth/authPage";
 import Home from "./Component/Home/Home";
+import Dashboard from "./Component/Dashboard/Dashboard";
+import DashboardHeader from "./Component/Dashboard/DBHeader/DBHeader";
 
 const App = () => {
-  return (
-    <div>
-      <Routes>
-        <Route path='/auth' element={<AuthPage/>}>
-        <Route path='/' element={<Home />}>
+  const router = createBrowserRouter([
+    {
+      path: "/auth",
+      element: <AuthPage />,
+    },
 
-        </Route>
-      </Routes>
-    </div>
+    {
+      path: "/",
+      element: <Home />,
+
+      children: [
+        {
+          path: "",
+          element: <Dashboard />,
+        },
+      ],
+    },
+  ]);
+  return (
+    <>
+      <RouterProvider router={router} />
+      {/* <Dashboard /> */}
+    </>
   );
 };
 

@@ -17,6 +17,7 @@ const Signup: React.FC = () => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
+
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     const signup = {
@@ -25,13 +26,15 @@ const Signup: React.FC = () => {
       userName: form.userName,
       phoneNumber: form.phoneNumber,
     };
+    console.log(signup);
+
     try {
       const response = await axios.post(
-        `http://localhost:5007/auth/register`,
+        `http://localhost:5000/api/v1/auth/signup`,
         signup
       );
-      if (response.data.error) {
-        navigate("/login");
+      if (!response.data.error) {
+        navigate("/");
       }
       console.log(response.data);
     } catch (error) {
@@ -77,7 +80,7 @@ const Signup: React.FC = () => {
 
       <input
         type='number'
-        name='username'
+        name='phoneNumber'
         // value={form.phoneNumber}
         onChange={handleInputChange}
         placeholder='phone number'

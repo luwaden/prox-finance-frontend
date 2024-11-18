@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
+import "./authpage.css";
 
 const AuthPage: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -14,17 +15,17 @@ const AuthPage: React.FC = () => {
       <div className='auth-page'>
         <h1>
           {" "}
-          {isLogin ? "Welcome to Prox Note" : "Create a Prox Note account"}{" "}
+          {isLogin ? "Welcome to Prox Cash" : "Create a Prox Cash account"}{" "}
         </h1>
 
-        <button onClick={toggleAuthMode} className='auth-toggle'>
+        {/* <button onClick={toggleAuthMode} className='auth-toggle'>
           {" "}
           Login
         </button>
         <button onClick={toggleAuthMode} className='auth-toggle'>
           {" "}
           Sign Up
-        </button>
+        </button> */}
 
         {isLogin ? <Login /> : <Signup />}
         <p>
