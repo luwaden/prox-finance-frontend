@@ -10,13 +10,18 @@ import {
 import AuthPage from "./Component/auth/authPage";
 import Home from "./Component/Home/Home";
 import Dashboard from "./Component/Dashboard/Dashboard";
-import DashboardHeader from "./Component/Dashboard/DBHeader/DBHeader";
+import IncomeTable from "./Component/Dashboard/Income/incomeTable";
 
 const App = () => {
   const router = createBrowserRouter([
     {
       path: "/auth",
       element: <AuthPage />,
+    },
+
+    {
+      path: "/income-details",
+      element: <IncomeTable />,
     },
 
     {

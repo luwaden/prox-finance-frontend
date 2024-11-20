@@ -1,4 +1,8 @@
 /* DashboardBoxes.css */
+.main-dashboard {
+  display: flex;
+}
+
 .dashboard-container {
   display: flex;
   gap: 20px;
