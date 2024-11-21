@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./incomedetail.css";
+import "./incomeTable.css";
 import { IncomeData } from "../../model/income.model";
 
 const IncomeTable: React.FC = () => {
