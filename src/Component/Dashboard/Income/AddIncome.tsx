@@ -1,14 +1,15 @@
 import React from "react";
-const DashboardBoxes = () => {
+
+const AddIncome = () => {
   return (
     <div className='dashboard-container'>
       <div className='dashboard-box income-box'>
-        <h2>Income</h2>
-        <p>₦250,000</p>
+        <h2>Add Income</h2>
+        <h1>+</h1>
         <span className='growth positive'>+5%</span>
       </div>
     </div>
   );
 };
 
-export default DashboardBoxes;
+export default AddIncome;

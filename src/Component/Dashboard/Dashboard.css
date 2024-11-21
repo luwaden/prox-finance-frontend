@@ -1,21 +1,39 @@
 /* DashboardBoxes.css */
 .main-dashboard {
   display: flex;
+  flex-direction: column;
+}
+
+.account-overview {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chart-box {
+  display: flex;
 }
 
 .dashboard-container {
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   background-color: #f4f7fb;
+  width: 30%;
 }
 
 .dashboard-box {
+  min-width: 25%;
   flex: 1;
   background: #ffffff;
   border-radius: 12px;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
@@ -47,14 +65,37 @@
   border-radius: 20px;
 }
 
+.growth.balance {
+  background: #ffebee;
+  color: #69207a;
+}
+
 .growth.positive {
   background: #e8f5e9;
   color: #388e3c;
 }
 
+.growth.budget {
+  background: #e8f5e9;
+  color: #38428e;
+}
+
 .growth.negative {
   background: #ffebee;
   color: #d32f2f;
+}
+
+.balance-box {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  border-top: 4px solid #69207a;
+  width: 90%;
+  margin-left: 40px;
 }
 
 .income-box {
