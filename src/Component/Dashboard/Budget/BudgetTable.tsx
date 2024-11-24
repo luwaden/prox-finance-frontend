@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./Budgetdetail.css";
+import "./BudgetTable.css";
+import { Link } from "react-router-dom";
 
 interface Budget {
   title: string;
@@ -42,7 +43,11 @@ const BudgetTable: React.FC = () => {
     <div className='Budget-table-container'>
       <div className='table-header'>
         <h1>Budget History</h1>
-        <button>Add Budget</button>
+        <button>
+          <Link to={"/add-budget"} className='add-btn'>
+            Add Budget
+          </Link>
+        </button>
       </div>
       <table className='Budget-table'>
         <thead>

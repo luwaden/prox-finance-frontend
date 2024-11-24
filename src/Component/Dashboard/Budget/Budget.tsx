@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Budget = () => {
+const DashboardBoxes = () => {
   return (
-    <Link to={"/budget-details"} className='dashboard-container'>
+    <Link to={"budget-details"} className='dashboard-container'>
       <div className='dashboard-box budget-box'>
         <h2>Budget</h2>
         <p>₦250,000</p>
@@ -12,4 +12,4 @@ const Budget = () => {
   );
 };
 
-export default Budget;
+export default DashboardBoxes;

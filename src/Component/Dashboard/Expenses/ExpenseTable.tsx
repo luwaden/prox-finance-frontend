@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ExpenseTable.css";
+import { Link } from "react-router-dom";
 
 interface Expense {
   title: string;
@@ -42,7 +43,11 @@ const ExpenseTable: React.FC = () => {
     <div className='Expense-table-container'>
       <div className='table-header'>
         <h1>Expense History</h1>
-        <button>Add Budget</button>
+        <button>
+          <Link to={"/add-expense"} className='add-btn'>
+            Add Income
+          </Link>
+        </button>
       </div>
       <table className='Expense-table'>
         <thead>

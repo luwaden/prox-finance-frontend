@@ -15,6 +15,11 @@ import EditIncome from "./Component/Editfile/IncomeForm";
 import EditIncomeForm from "./Component/Dashboard/Income/EditIncomeForm";
 import AddIncomeForm from "./Component/Dashboard/Income/AddIncomeForm";
 import AddExpensesForm from "./Component/Dashboard/Expenses/AddExpensesForm";
+import ExpenseTable from "./Component/Dashboard/Expenses/ExpenseTable";
+import BudgetTable from "./Component/Dashboard/Budget/BudgetTable";
+import AddBudgetForm from "./Component/Dashboard/Budget/AddBudgetForm";
+import EditExpensesForm from "./Component/Dashboard/Expenses/EditExpensesForm";
+import EditBudgetForm from "./Component/Dashboard/Budget/EditBudget";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -48,13 +53,33 @@ const App = () => {
         },
 
         {
+          path: "expenses-details",
+          element: <ExpenseTable />,
+        },
+
+        {
           path: "add-expense",
           element: <AddExpensesForm />,
         },
 
         {
           path: "edit-expense",
+          element: <EditExpensesForm />,
+        },
+
+        {
+          path: "budget-details",
+          element: <BudgetTable />,
+        },
+
+        {
+          path: "add-budget",
           element: <AddIncomeForm />,
+        },
+
+        {
+          path: "edit-budget",
+          element: <EditBudgetForm />,
         },
       ],
     },

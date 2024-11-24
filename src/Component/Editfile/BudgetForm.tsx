@@ -16,7 +16,7 @@ type TDetails = {
   description: string;
 };
 
-const ExpenseForm: React.FC<IBudgetFormProps> = ({
+const BudgetForm: React.FC<IBudgetFormProps> = ({
   type,
   details,
   onSubmit,
@@ -105,4 +105,4 @@ const ExpenseForm: React.FC<IBudgetFormProps> = ({
   );
 };
 
-export default ExpenseForm;
+export default BudgetForm;
