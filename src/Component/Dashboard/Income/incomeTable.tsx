@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./incomeTable.css";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { IncomeData } from "../../model/income.model";
 
 const IncomeTable: React.FC = () => {
@@ -27,6 +28,7 @@ const IncomeTable: React.FC = () => {
       description: "Bonus received from business partner.",
     },
   ]);
+  const navigate = useNavigate();
 
   const handleDetails = (description: string) => {
     alert(description);
@@ -36,17 +38,20 @@ const IncomeTable: React.FC = () => {
     <div className='income-table-container'>
       <div className='table-header'>
         <h1>Income History</h1>
-        <button>Add Budget</button>
+        <button>
+          <Link to={"/add-income"} className='add-btn'>
+            Add Income
+          </Link>
+        </button>
       </div>
       <table className='income-table'>
         <thead>
           <tr>
             <th>Title</th>
             <th>Date</th>
-
             <th>Amount</th>
             <th>Category</th>
-            <th>Action</th>
+            <th>Update</th>
           </tr>
         </thead>
         <tbody>
@@ -62,14 +67,25 @@ const IncomeTable: React.FC = () => {
               <td>
                 <button
                   className='details-button'
+                  onClick={() => navigate("/edit-income")}>
+                  edit
+                </button>
+
+                <button
+                  className='details-button'
                   onClick={() => handleDetails(transaction.description)}>
-                  Details
+                  delete
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <button>
+        <Link to={"/"} className='add-btn'>
+          Back
+        </Link>
+      </button>
     </div>
   );
 };

@@ -16,10 +16,7 @@ const Sidebar: React.FC = () => {
             <span className='menu-icon'>👤</span>
             <span className='menu-text'>Ayodeji</span>
           </li>
-          <li className='menu-item'>
-            <span className='menu-icon'>📥</span>
-            <span className='menu-text'>Inbox</span>
-          </li>
+
           <li className='menu-item active'>
             <span className='menu-icon'>📊</span>
             <span className='menu-text'>Dashboard</span>
@@ -30,11 +27,15 @@ const Sidebar: React.FC = () => {
           </li>
           <li className='menu-item'>
             <span className='menu-icon'>💰</span>
-            <span className='menu-text'>Pricing</span>
+            <span className='menu-text'>Income</span>
+          </li>
+          <li className='menu-item'>
+            <span className='menu-icon'>📥</span>
+            <span className='menu-text'>Budget</span>
           </li>
           <li className='menu-item'>
             <span className='menu-icon'>❓</span>
-            <span className='menu-text'>Help</span>
+            <span className='menu-text'>Expenses</span>
           </li>
         </ul>
       </nav>

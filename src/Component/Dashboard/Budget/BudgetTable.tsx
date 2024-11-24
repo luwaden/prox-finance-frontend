@@ -40,7 +40,10 @@ const BudgetTable: React.FC = () => {
 
   return (
     <div className='Budget-table-container'>
-      <h1>Budget History</h1>
+      <div className='table-header'>
+        <h1>Budget History</h1>
+        <button>Add Budget</button>
+      </div>
       <table className='Budget-table'>
         <thead>
           <tr>
@@ -65,6 +68,12 @@ const BudgetTable: React.FC = () => {
                   className='details-button'
                   onClick={() => handleDetails(transaction.description)}>
                   Details
+                </button>
+
+                <button
+                  className='details-button'
+                  onClick={() => handleDetails(transaction.description)}>
+                  delete
                 </button>
               </td>
             </tr>

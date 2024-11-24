@@ -1,3 +1,16 @@
+.table-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-btn:hover {
+  background-color: #3a78e4;
+}
+
+.add-btn:active {
+  transform: scale(0.98);
+}
+
 .income-table-container {
   margin: 20px;
   padding: 20px;
@@ -29,7 +42,8 @@
   background-color: #f1f1f1;
 }
 
-.details-button {
+.details-button,
+.add-btn {
   background-color: #0078d7;
   color: #fff;
   border: none;

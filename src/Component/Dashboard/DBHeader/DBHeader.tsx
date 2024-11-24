@@ -1,13 +1,13 @@
 import React from "react";
 import "./DBHeader.css"; // Import the CSS file for styling
+import { Link } from "react-router-dom";
 
 const DashboardHeader: React.FC = () => {
   return (
     <header className='dashboard-header'>
-      {/* Heading */}
-      <div className='dashboard-heading'>
+      <Link to={"/"} className='dashboard-heading'>
         <h1>Dashboard</h1>
-      </div>
+      </Link>
 
       {/* Search Box */}
       <div className='dashboard-search'>

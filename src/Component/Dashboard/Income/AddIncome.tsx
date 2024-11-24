@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AddIncome = () => {
   return (
-    <div className='dashboard-container'>
+    <Link to={"/add-income"} className='dashboard-container'>
       <div className='dashboard-box income-box'>
         <h2>Add Income</h2>
         <h1>+</h1>
         <span className='growth positive'>+5%</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

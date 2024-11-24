@@ -67,7 +67,12 @@ const ExpenseTable: React.FC = () => {
                 <button
                   className='details-button'
                   onClick={() => handleDetails(transaction.description)}>
-                  Details
+                  edit
+                </button>
+                <button
+                  className='details-button'
+                  onClick={() => handleDetails(transaction.description)}>
+                  delete
                 </button>
               </td>
             </tr>
