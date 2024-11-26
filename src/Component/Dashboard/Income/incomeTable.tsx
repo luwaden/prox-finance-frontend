@@ -2,33 +2,51 @@ import React, { useEffect, useState } from "react";
 import "./incomeTable.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IncomeData } from "../../model/income.model";
+import axios from "axios";
 
 const IncomeTable: React.FC = () => {
-  const [transactions] = useState<IncomeData[]>([
-    {
-      title: "Freelance Payment",
-      date: "21 March 2021 at 8:45 PM",
-      amount: "250",
-      category: "Receive",
-      description: "Payment for freelance web development project.",
-    },
-    {
-      title: "Investment Return",
-      date: "20 March 2021 at 9:28 AM",
-      amount: "200",
-      category: "Deposit",
-      description: "Monthly return on investment from stocks.",
-    },
-    {
-      title: "Business Bonus",
-      date: "19 March 2021 at 7:21 PM",
+  // const [transactions] = useState<IncomeData[]>([
+  //   {
+  //     title: "Freelance Payment",
+  //     date: "21 March 2021 at 8:45 PM",
+  //     amount: "250",
+  //     category: "Receive",
+  //     description: "Payment for freelance web development project.",
+  //   },
+  //   {
+  //     title: "Investment Return",
+  //     date: "20 March 2021 at 9:28 AM",
+  //     amount: "200",
+  //     category: "Deposit",
+  //     description: "Monthly return on investment from stocks.",
+  //   },
+  //   {
+  //     title: "Business Bonus",
+  //     date: "19 March 2021 at 7:21 PM",
 
-      amount: "500",
-      category: "Receive",
-      description: "Bonus received from business partner.",
-    },
-  ]);
+  //     amount: "500",
+  //     category: "Receive",
+  //     description: "Bonus received from business partner.",
+  //   },
+  // ]);
+  const [income, setincome] = useState([]);
   const navigate = useNavigate();
+  useEffect(() => {
+    getIncome();
+  }, []);
+
+  const getIncome = async () => {
+    try {
+      const result: any = await axios.get(
+        "http://localhost:5000/api/v1/income/get-income"
+      );
+      console.log(result.data);
+
+      setincome(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleDetails = (description: string) => {
     alert(description);
@@ -55,7 +73,7 @@ const IncomeTable: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {transactions.map((transaction, index) => (
+          {income.map((transaction: any, index) => (
             <tr key={index}>
               <td>{transaction.title}</td>
               <td>{transaction.date}</td>

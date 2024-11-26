@@ -23,11 +23,12 @@ const Login: React.FC<any> = () => {
         `http://localhost:5000/api/v1/auth/login `,
         login
       );
+      console.log(response);
 
       if (!response.data.error) {
         const token = response.data.data.token;
         localStorage.setItem("token", token);
-        // navigate("/");
+        navigate("/");
       }
     } catch (error) {
       console.error({
@@ -56,8 +57,8 @@ const Login: React.FC<any> = () => {
         onChange={handleInputChange}
         required
       />
-      <button type='submit' className='auth-btn'>
-        Login
+      <button onClick={handleLogin} type='submit' className='auth-btn'>
+        LOGIN IN
       </button>
     </form>
   );

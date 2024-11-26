@@ -2,15 +2,17 @@ import { ExpensesData } from "../model/expenses.model";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./Edit.css";
+import { IBudgetData } from "../model/budget.model";
 
 export interface IBudgetFormProps {
   type: "Add" | "Edit";
   details?: TDetails;
-  onSubmit: (e: TDetails) => void;
+  onSubmit?: (e: TDetails) => void;
 }
 type TDetails = {
   title: string;
-  date: string;
+  startDate: string;
+  endDate: string;
   amount: number;
   category: string;
   description: string;
@@ -21,9 +23,10 @@ const BudgetForm: React.FC<IBudgetFormProps> = ({
   details,
   onSubmit,
 }) => {
-  const [expensesData, setExpensesData] = useState<ExpensesData>({
+  const [budgetData, setBudgetData] = useState<IBudgetData>({
     title: "",
-    date: "",
+    startDate: "",
+    endDate: "",
     amount: "",
     category: "",
     description: "",
@@ -34,16 +37,17 @@ const BudgetForm: React.FC<IBudgetFormProps> = ({
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setExpensesData((prev) => ({ ...prev, [name]: value }));
+    setBudgetData((prev) => ({ ...prev, [name]: value }));
   };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setExpensesData({
+    setBudgetData({
       title: "",
-      date: "",
+      startDate: "",
+      endDate: "",
       amount: "",
       category: "",
       description: "",
@@ -59,7 +63,7 @@ const BudgetForm: React.FC<IBudgetFormProps> = ({
           type='text'
           className='edit-title'
           placeholder='Add your income title'
-          value={expensesData.title}
+          value={budgetData.title}
           onChange={handleChange}
           required
         />
@@ -67,16 +71,25 @@ const BudgetForm: React.FC<IBudgetFormProps> = ({
           type='date'
           name='date'
           className='edit-date'
-          value={expensesData.date}
+          value={budgetData.startDate}
           onChange={handleChange}
           required
         />
+        <input
+          type='date'
+          name='date'
+          className='edit-date'
+          value={budgetData.endDate}
+          onChange={handleChange}
+          required
+        />
+
         <input
           name='amount'
           type='text'
           className='edit-amount'
           placeholder='Add your income amount'
-          value={expensesData.amount}
+          value={budgetData.amount}
           onChange={handleChange}
           required
         />
@@ -85,7 +98,7 @@ const BudgetForm: React.FC<IBudgetFormProps> = ({
           type='text'
           className='edit-category'
           placeholder='Add your income category'
-          value={expensesData.category}
+          value={budgetData.category}
           onChange={handleChange}
           required
         />
@@ -93,7 +106,7 @@ const BudgetForm: React.FC<IBudgetFormProps> = ({
           name='description'
           className='edit-description'
           placeholder='Add a description (optional)'
-          value={expensesData.description}
+          value={budgetData.description}
           onChange={handleChange}></textarea>
         <div className='editNoteBtn'>
           <button type='submit' className='saveBtn'>

@@ -1,7 +1,9 @@
 import { IncomeData } from "../model/income.model";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState } from "react";
+import axios from "axios";
 import "./Edit.css";
+import { log } from "console";
 
 export interface IIncomeFormProps {
   type: "Add" | "Edit";
@@ -10,6 +12,7 @@ export interface IIncomeFormProps {
 }
 
 type TDetails = {
+  _id?: string;
   title: string;
   date: string;
   amount: number;
@@ -17,11 +20,7 @@ type TDetails = {
   description: string;
 };
 
-const IncomeForm: React.FC<IIncomeFormProps> = ({
-  type,
-  details,
-  onSubmit,
-}) => {
+const IncomeForm: React.FC<IIncomeFormProps> = ({ type, details }) => {
   const [incomeData, setIncomeData] = useState<IncomeData>({
     title: "",
     date: "",
@@ -29,7 +28,7 @@ const IncomeForm: React.FC<IIncomeFormProps> = ({
     category: "",
     description: "",
   });
-
+  const navigate = useNavigate();
   // Handle form input changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -41,14 +40,43 @@ const IncomeForm: React.FC<IIncomeFormProps> = ({
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("submit is working");
 
-    setIncomeData({
-      title: "",
-      date: "",
-      amount: "",
-      category: "",
-      description: "",
-    });
+    try {
+      if (type === "Add") {
+        const response = await axios.post(
+          `http://localhost:5000/api/v1/income/add-income`,
+          incomeData,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        console.log("income added:", response);
+      } else if (type === "Edit") {
+        if (!details || !details._id) {
+          console.error("Error: Missing details._id for editing.");
+          return;
+        }
+
+        const response = await axios.put(
+          `http://localhost:5000/api/v1/income/add-income/${details._id}`,
+          incomeData
+        );
+        console.log("Income updated:", response.data);
+        setIncomeData({
+          title: "",
+          date: "",
+          amount: "",
+          category: "",
+          description: "",
+        });
+        navigate("income-details");
+      }
+    } catch (error) {
+      console.error("Error submitting income:", error);
+    }
   };
 
   return (
@@ -97,7 +125,7 @@ const IncomeForm: React.FC<IIncomeFormProps> = ({
           value={incomeData.description}
           onChange={handleChange}></textarea>
         <div className='editNoteBtn'>
-          <button type='submit' className='saveBtn'>
+          <button onClick={handleSubmit} type='submit' className='saveBtn'>
             Save Income
           </button>
         </div>

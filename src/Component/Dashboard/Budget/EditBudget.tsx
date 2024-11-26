@@ -4,7 +4,8 @@ import BudgetForm from "../../Editfile/BudgetForm";
 const EditBudgetForm = () => {
   const details = {
     title: "Investment Return",
-    date: "20 March 2021 at 9:28 AM",
+    endDate: "45 March 2021 at 9:28 AM",
+    startDate: "20 March 2021 at 9:28 AM",
     amount: 200,
     category: "Deposit",
     description: "Monthly return on investment from stocks.",
