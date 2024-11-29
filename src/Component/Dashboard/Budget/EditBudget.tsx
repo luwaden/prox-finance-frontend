@@ -1,5 +1,5 @@
 import React from "react";
-import BudgetForm from "../../Editfile/BudgetForm";
+import BudgetForm from "../../Form/BudgetForm";
 
 const EditBudgetForm = () => {
   const details = {

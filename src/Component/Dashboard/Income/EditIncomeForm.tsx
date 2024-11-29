@@ -1,15 +1,18 @@
 import React from "react";
-import IncomeForm from "../../Editfile/IncomeForm";
+import IncomeForm from "../../Form/IncomeForm";
 
 const EditIncomeForm = () => {
   const details = {
-    title: "Business Bonus",
-    date: "19 March 2021 at 7:21 PM",
-    amount: 500,
-    category: "Receive",
-    description: "Bonus received from business partner.",
+    id: "",
+    title: "",
+    date: "",
+    amount: 0,
+    category: "",
+    description: "",
   };
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    console.log("Income edited successfully");
+  };
   return (
     <>
       <IncomeForm type='Edit' details={details} onSubmit={onSubmit} />

@@ -1,5 +1,5 @@
 import React from "react";
-import IncomeForm from "../../Editfile/IncomeForm";
+import IncomeForm from "../../Form/IncomeForm";
 
 const AddIncomeForm = () => {
   const onSubmit = () => {};

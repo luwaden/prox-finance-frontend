@@ -11,7 +11,7 @@ import AuthPage from "./Component/auth/authPage";
 import Home from "./Component/Home/Home";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import IncomeTable from "./Component/Dashboard/Income/incomeTable";
-import EditIncome from "./Component/Editfile/IncomeForm";
+import EditIncome from "./Component/Form/IncomeForm";
 import EditIncomeForm from "./Component/Dashboard/Income/EditIncomeForm";
 import AddIncomeForm from "./Component/Dashboard/Income/AddIncomeForm";
 import AddExpensesForm from "./Component/Dashboard/Expenses/AddExpensesForm";

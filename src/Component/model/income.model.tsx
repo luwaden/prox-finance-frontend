@@ -1,9 +1,8 @@
-import { Date } from "mongoose";
-
 export interface IncomeData {
+  _id: string;
   title: string;
   date: any;
-  amount: string;
+  amount: number;
   category: string;
   description: string;
 }
